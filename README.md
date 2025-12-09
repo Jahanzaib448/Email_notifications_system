@@ -1,147 +1,137 @@
 # Multi Email Notifier — Styled (Python + Tkinter)
 
-یہ README فائل آپ کے **multi_email_notifier_styled.py** پروجیکٹ کی مکمل وضاحت دیتی ہے۔ یہ ایک خوبصورت GUI ایپ ہے جو ایک ہی ای میل مختلف لوگوں کو ایک ساتھ بھیجنے کے لیے استعمال ہوتی ہے۔
+A modern, beautifully designed Tkinter GUI application that allows you to send a single email to multiple recipients using SMTP. It supports Gmail App Password authentication, includes a gradient user interface, and prevents freezing using background threading.
 
 ---
 
-## 📌 پروجیکٹ کا تعارف
+## 📌 Project Overview
 
-یہ Python Tkinter کی مدد سے بنایا گیا ایک **Styled Multi Email Sender GUI** ہے جو:
+This project is a **Styled Multi Email Sender GUI** built with Python (Tkinter).  
+It allows you to:
 
-* ایک ہی ای میل کئی ریسیورز کو بھیجتا ہے
-* Gmail SMTP (App Password) کو سپورٹ کرتا ہے
-* خوبصورت گرادیئنٹ GUI رکھتا ہے
-* بیک گراؤنڈ میں تھریڈنگ استعمال کر کے ایپ کو فریز ہونے سے بچاتا ہے
-* لاگ اسٹیٹس دکھاتا ہے کہ کون سی میل کامیاب/فیل ہوئی
-
----
-
-## ✨ خصوصیات (Features)
-
-* متعدد ای میلز ایک ساتھ بھیجنے کی سہولت
-* سکریپٹ فریز نہ ہو — بیک گراؤنڈ تھریڈ
-* گرادیئنٹ اسٹائلڈ GUI (Purple + Pink Theme)
-* Valid Email Check (Regex Based)
-* SMTP SSL / TLS Support (465 / 587)
-* Send Log Window
-* Buttons with Hover Effects
+- Send the same email to multiple recipients  
+- Use Gmail SMTP (supports App Password)  
+- Enjoy a modern gradient Purple-Pink UI  
+- Avoid GUI freezing (thanks to threading)  
+- View real-time logs showing success and failures  
 
 ---
 
-## 🧩 ضروریات (Requirements)
+## ✨ Features
 
-اس پروجیکٹ کو چلانے کے لیے درج ذیل چیزیں درکار ہوں گی:
-
-* Python 3.8 یا جدید
-* Built‑in libraries:
-
-  * tkinter
-  * smtplib
-  * email
-  * threading
-  * re
-
-کسی ایکسٹرا لائبریری کی ضرورت نہیں۔
+- Send email to multiple users at once  
+- Beautiful gradient theming  
+- Background threading (non-blocking GUI)  
+- Email validation using regex  
+- Supports SSL (465) and TLS (587)  
+- Hover-styled buttons  
+- Scrollable log window  
+- Separate fields for SMTP server and port  
 
 ---
 
-## 📁 فائل اسٹرکچر
+## 🧩 Requirements
+
+No external libraries required.  
+Only Python’s built-in modules:
+
+- Python 3.8+
+- tkinter
+- smtplib
+- email.message
+- threading
+- re
+
+---
+
+## 📁 File Structure
 
 ```
 |-- multi_email_notifier_styled.py
-|-- README.md (This file)
+|-- README.md
 ```
 
 ---
 
-## 🔧 انسٹالیشن
+## 🔧 Installation
 
-1. Python انسٹال کریں (اگر پہلے سے نہیں)
-2. اس فائل کو ڈاؤنلوڈ کریں یا اپنے فولڈر میں کاپی کریں:
-
-   ```bash
-   multi_email_notifier_styled.py
-   ```
-3. کوڈ رن کریں:
-
-   ```bash
-   python multi_email_notifier_styled.py
-   ```
-
----
-
-## ⚙️ کنفیگریشن
-
-آپ کو Gmail App Password استعمال کرنا ہوگا۔
-
-### 🔑 Gmail App Password کیسے لیں؟
-
-1. Google Account → Security → App Passwords
-2. “Mail” → “Windows Computer” سلیکٹ کریں
-3. 16‑digit password کو یہاں استعمال کریں:
-
-   * **Sender Email**
-   * **App Password**
-
-SMTP Settings:
-
-```
-SMTP Server: smtp.gmail.com
-Port: 465 (SSL) OR 587 (TLS)
-```
-
----
-
-## ▶️ استعمال کا طریقہ (How to Use)
-
-### 1️⃣ ایپ اوپن کریں
+1. Install Python (if not installed).
+2. Download or clone this project.
+3. Run the script:
 
 ```bash
 python multi_email_notifier_styled.py
 ```
 
-### 2️⃣ Sender Email & App Password دیں
+---
 
-### 3️⃣ SMTP Server & Port سیٹ کریں (Default already set):
+## ⚙️ Gmail Configuration (Important)
 
-* smtp.gmail.com
-* port 465
+Gmail requires an **App Password**.  
+Normal Gmail password will **NOT** work.
 
-### 4️⃣ Recipients ڈالیں
+### 🔑 Generate Gmail App Password:
 
-* comma سے الگ کریں، یا
-* نئی لائن استعمال کریں
+1. Go to **Google Account → Security**
+2. Enable **2-Step Verification**
+3. Go to **App Passwords**
+4. Choose:
+   - App: *Mail*
+   - Device: *Windows Computer* (or any)
+5. Google will generate a **16-digit password**
+6. Enter it inside the app
+
+### Default SMTP Settings:
+
+```
+SMTP Server: smtp.gmail.com
+Port (SSL): 465
+Port (TLS): 587
+```
+
+---
+
+## ▶️ How to Use
+
+### 1️⃣ Launch the program
+```bash
+python multi_email_notifier_styled.py
+```
+
+### 2️⃣ Enter:
+- Sender Email  
+- App Password  
+- SMTP Server  
+- Port  
+
+### 3️⃣ Add multiple recipients
+Use comma or newlines:
 
 ```
 one@gmail.com
-two@gmail.com, three@yahoo.com
+two@yahoo.com, three@hotmail.com
 ```
 
-### 5️⃣ Subject اور Body لکھیں
+### 4️⃣ Enter Subject & Message Body
 
-### 6️⃣ “Send Emails” دبائیں
+### 5️⃣ Click **Send Emails**
 
-اپریشن اسٹیٹس نیچے والی Log Window میں نظر آئے گا۔
+You will see delivery logs in the status window.
 
 ---
 
 ## 🧪 Email Validation
 
-کوڈ خود چیک کرتا ہے کہ:
+The app checks:
 
-* غلط ای میل فارمیٹ ہو تو **Error** آئے
-* خالی recipient لسٹ ہو تو **Error** آئے
-* Confirmation Box آئے گا: “Send to X recipients?”
-
----
-
-## 🧵 Threading
-
-ایپ فریز نہ ہو، اس کے لیے ای میل بھیجنے کا عمل **background thread** میں چلتا ہے۔
+- Invalid email formats  
+- Missing recipients  
+- Missing sender credentials  
+- Confirmation popup before sending  
 
 ---
 
-## 📬 Output Log Example
+## 📬 Sample Log Output
 
 ```
 Preparing to send to 3 recipients...
@@ -160,32 +150,24 @@ Done. Sent 2/3 messages.
 ## 🛠 Troubleshooting
 
 ### ❌ Authentication Error
-
-* App Password ضرور استعمال کریں — Normal Gmail Password نہیں چلتا۔
-
-### ❌ Less Secure App Error
-
-* Gmail اب direct password login allow نہیں کرتا — App Password ضروری ہے۔
+Use **App Password**, not your normal Gmail password.
 
 ### ❌ Port Error
+Try:
+- **465** (SSL)
+- **587** (TLS)
 
-* 465 (SSL) try کریں
-* یا 587 (TLS)
+### ❌ Email Not Sending
+- Check your internet
+- Check App Password
+- Check email formatting
 
 ---
 
 ## 🤝 Contributing
 
-اگر آپ اس میں مزید فیچرز شامل کروانا چاہتے ہیں:
+Suggestions and feature requests are welcome!
 
-* Dark Mode
-* Export Log Button
-* Import Email CSV
-* Attachments Support
-  مجھے بتائیں — میں آپ کے لیے شامل کر دوں گا۔
-
----
-
-## © License
-
-Free to use. No restrictions.
+Possible future upgrades:
+- Dark mode  
+- Add email
